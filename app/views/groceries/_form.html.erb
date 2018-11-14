@@ -1,0 +1,7 @@
+<h1><%= @grocery.id ? "Edit Store" : "New Store" %></h1>
+<hr />
+<%= form_for @grocery do |g| %>
+    <%= g.label :name %>
+    <%= g.text_field :name, required: true, autofocus: true, placeholder: "Name" %>
+    <%= g.submit %>
+<% end %>

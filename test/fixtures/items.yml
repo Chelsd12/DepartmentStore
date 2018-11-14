@@ -3,11 +3,13 @@
 one:
   name: MyString
   description: MyString
-  price: 1.5
   quantity: 1
+  price: 1.5
+  grocery: one
 
 two:
   name: MyString
   description: MyString
-  price: 1.5
   quantity: 1
+  price: 1.5
+  grocery: two

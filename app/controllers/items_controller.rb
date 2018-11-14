@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  
+  before_action :set_grocery
+  before_action :set_item, except: [:index, :new, :create]
+
   def index
     @items = grocery.items
   end
@@ -37,6 +39,14 @@ class ItemsController < ApplicationController
   end
 
   private
+  def set_grocery
+    @grocery = Grocery.find(params[:grocery_id])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:name, :description, :price, :quantity)
   end

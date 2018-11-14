@@ -1,4 +1,5 @@
 class GroceriesController < ApplicationController
+  before_action :set_grocery, except: [:index, :new, :create]
   
   def index
     @groceries = Grocery.all
@@ -8,7 +9,8 @@ class GroceriesController < ApplicationController
   end
 
   def new
-    @groceries = Grocery.new
+    @grocery = Grocery.new
+    render partial: "form"
   end
 
   def create
@@ -21,6 +23,7 @@ class GroceriesController < ApplicationController
   end
 
   def edit
+    render partial: "form"
   end
 
   def update
