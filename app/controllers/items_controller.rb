@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :edit, :destroy]
 
   def index
-    @items = grocery.items
+    @items = @grocery.items
   end
 
   def show
@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = @grocery.items.new
+    render partial: "form"
   end
 
   def create
@@ -23,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    render partial: "form"
   end
 
   def update
