@@ -1,2 +1,13 @@
 <h1><%= @grocery.name %></h1>
 <hr />
+<h2>What would you like to do?</h2>
+<%= link_to "View Items", grocery_items_path(@grocery) %>
+<br />
+<br />
+<%= link_to "Edit Items", edit_grocery_path(@grocery) %>
+<br />
+<br />
+<%= link_to "Delete Items", grocery_path(@grocery), method: :delete %>
+<br />
+<br />
+<button><%= link_to "View Items", groceries_path %></button>

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_grocery
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, only: [:show, :update, :edit, :destroy]
 
   def index
     @items = grocery.items

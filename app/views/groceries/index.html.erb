@@ -1,10 +1,9 @@
 <h1>Welcome to the Grocery Store</h1>
 <hr />
-<h1>Pick a department to see items:</h1>
-<br />
+<h2>Select a department:</h2>
+<%= link_to "Create a new store", new_grocery_path %>
 <ul>
-    <%= @groceries.each do |g| %>
+    <% @groceries.each do |g| %>
         <li><%= link_to g.name, grocery_path(g) %></li>
     <% end %>
 </ul>
-

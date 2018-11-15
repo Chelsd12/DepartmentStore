@@ -40,6 +40,10 @@ class GroceriesController < ApplicationController
   end
 
   private
+  def set_grocery
+    @grocery = Grocery.find(params[:id])
+  end
+
   def grocery_params
     params.require(:name).permit(:name)
   end

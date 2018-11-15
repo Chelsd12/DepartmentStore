@@ -1,1 +1,8 @@
-
+<h1>Click an Item to View Content</h1>
+<hr />
+<%= link_to "Create a new Item", new_grocery_item_path(@grocery) %>
+<ul>
+    <%= @items.each do |i| %>
+        <li><%= link_to i.name, grocery_item_path(@grocery, i) %></li>
+    <% end %>    
+</ul>

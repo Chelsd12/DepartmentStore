@@ -1,2 +1,5 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @grocery.name %> - <%= @item.name %></h1>
+<p><%= @item.description %></p>
+<%= link_to "Edit Item", edit_grocery_item_path(@grocery, @item) %>
+<%= link_to "Delete Item", grocery_item_path(@grocery, @item), method: :delete %>
+<%= link_to "Back to Stores", grocery_items_path(@grocery) %>
